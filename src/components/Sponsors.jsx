@@ -1,17 +1,40 @@
 import { motion } from 'framer-motion';
 
-// Sponsor logos - including Hoko Ice Cream
-const sponsorLogos = [
-  { id: 1, name: 'Google', logo: 'https://cdn-icons-png.flaticon.com/512/2875/2875404.png' },
-  { id: 2, name: 'Microsoft', logo: 'images/sponsor/Microsoft.png' },
-  // { id: 3, name: 'Hoko Ice Cream', logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQGQNuA8-teKSw/company-logo_200_200/company-logo_200_200/0/1699446881028/hrpl_restaurants_pvtltd_logo?e=2147483647&v=beta&t=9uP_BHZuSMYfLQQxLQ_xlrgk8EQ0i-qHh8QxUGt3yqM' },
+// Title Sponsors
+const titleSponsors = [
+  { id: 1, name: 'BlackHat', logo: 'images/sponsor/BlackHat.jpg' },
+];
+
+// Principle Sponsors
+const principleSponsors = [
+  { id: 1, name: 'Free Website Guys', logo: 'images/sponsor/Freewebsiteguy.png' },
+];
+
+// In-Kind Sponsors
+const inKindSponsors = [
+  { id: 1, name: 'Gully Meals', logo: 'images/sponsor/GullyMeals.png' },
+  { id: 2, name: 'Hive Bharat', logo: 'images/sponsor/HiveBharat.jpg' },
+  { id: 3, name: 'Financial Friend', logo: 'images/sponsor/FinancialFrined.jpg' },
+];
+
+// Platform Partners
+const platformPartners = [
+  { id: 1, name: 'Devfolio', logo: 'images/sponsor/Devfolio.png' },
+];
+
+// Track Partners
+const trackPartners = [
+  { id: 1, name: 'ETHIndia', logo: 'images/sponsor/ETHIndia.jpg' },
 ];
 
 // Community Partners logos
 const communityPartners = [
-  { id: 1, name: 'Blockseblock', logo: 'images/community-partners/blockseblock.jpg' },
-  { id: 2, name: 'BlockOn', logo: 'images/community-partners/blockon.png' },
-  // { id: 3, name: 'Reskill', logo: 'https://pbs.twimg.com/profile_images/1535225336581206016/38S_3tKb_400x400.jpg' },
+  { id: 1, name: 'INBM', logo: 'images/sponsor/INBM.png' },
+  { id: 2, name: 'Chain Chapter', logo: 'images/sponsor/Chain Chapter.jpg' },
+  { id: 3, name: 'Noida Nerds', logo: 'images/sponsor/NoidaNerds.png' },
+  { id: 4, name: 'Nerds Room', logo: 'images/sponsor/nerds_room_logo.jpeg' },
+  { id: 5, name: 'Henu OS', logo: 'images/sponsor/HENU OS.png' },
+  { id: 6, name: 'AI Interview Agents', logo: 'images/sponsor/AIInterviewAgents.png' },
 ];
 
 const Sponsors = () => {
@@ -59,6 +82,18 @@ const Sponsors = () => {
           </p>
         </motion.div>
 
+        {/* Title Sponsors */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">
+            Title Sponsor
+          </h3>
+        </motion.div>
+
         <motion.div 
           className="flex flex-wrap justify-center items-center gap-4 mb-16 mx-auto max-w-4xl"
           variants={containerVariants}
@@ -66,7 +101,44 @@ const Sponsors = () => {
           animate="visible"
           transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
         >
-          {sponsorLogos.map((sponsor) => (
+          {titleSponsors.map((sponsor) => (
+            <motion.div
+              key={sponsor.id}
+              variants={itemVariants}
+              whileHover="hover"
+              className="flex items-center justify-center p-4 relative overflow-hidden mx-6 my-4"
+            >
+              <motion.img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="max-h-24 w-auto relative z-10"
+                whileHover={{ y: -5, scale: 1.15 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Principle Sponsors */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10 mt-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">
+            Principle Sponsor
+          </h3>
+        </motion.div>
+
+        <motion.div 
+          className="flex flex-wrap justify-center items-center gap-4 mb-16 mx-auto max-w-4xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
+        >
+          {principleSponsors.map((sponsor) => (
             <motion.div
               key={sponsor.id}
               variants={itemVariants}
@@ -77,6 +149,117 @@ const Sponsors = () => {
                 src={sponsor.logo}
                 alt={sponsor.name}
                 className="max-h-20 w-auto relative z-10"
+                whileHover={{ y: -5, scale: 1.15 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* In-Kind Sponsors */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10 mt-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">
+            In-Kind Sponsors
+          </h3>
+        </motion.div>
+
+        <motion.div 
+          className="flex flex-wrap justify-center items-center gap-4 mb-16 mx-auto max-w-4xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
+        >
+          {inKindSponsors.map((sponsor) => (
+            <motion.div
+              key={sponsor.id}
+              variants={itemVariants}
+              whileHover="hover"
+              className="flex items-center justify-center p-4 relative overflow-hidden mx-6 my-4"
+            >
+              <motion.img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="max-h-16 w-auto relative z-10"
+                whileHover={{ y: -5, scale: 1.15 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Platform Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10 mt-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">
+            Platform Partner
+          </h3>
+        </motion.div>
+
+        <motion.div 
+          className="flex flex-wrap justify-center items-center gap-4 mb-16 mx-auto max-w-4xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
+        >
+          {platformPartners.map((sponsor) => (
+            <motion.div
+              key={sponsor.id}
+              variants={itemVariants}
+              whileHover="hover"
+              className="flex items-center justify-center p-4 relative overflow-hidden mx-6 my-4"
+            >
+              <motion.img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="max-h-16 w-auto relative z-10"
+                whileHover={{ y: -5, scale: 1.15 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Track Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10 mt-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">
+            Track Partner
+          </h3>
+        </motion.div>
+
+        <motion.div 
+          className="flex flex-wrap justify-center items-center gap-4 mb-16 mx-auto max-w-4xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
+        >
+          {trackPartners.map((sponsor) => (
+            <motion.div
+              key={sponsor.id}
+              variants={itemVariants}
+              whileHover="hover"
+              className="flex items-center justify-center p-4 relative overflow-hidden mx-6 my-4"
+            >
+              <motion.img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="max-h-16 w-auto relative z-10"
                 whileHover={{ y: -5, scale: 1.15 }}
                 transition={{ duration: 0.3 }}
               />
