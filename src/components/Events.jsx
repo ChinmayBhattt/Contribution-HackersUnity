@@ -5,35 +5,48 @@ import { CalendarIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/out
 const events = [
   {
     id: 1,
-    title: 'Hack Node India By Blockseblock',
-    image: 'images/achivement-Image/HackNodeIndia.jpg',
-    date: '10th Aug - 31st Aug',
-    location: 'Hybrid: Australia, USA, India',
-    attendees: 'Global Participants',
-    description: 'Hack Node India presents a hands-on workshop series for students to build with AI, Web3, gaming, and more. Learn from experts, build real projects, win from a $5,000 prize pool, and get a chance to compete for $100,000 and an incubation opportunity in Dubai through the Global Accelerator Program.',
-    status: 'Upcoming'
+    title: 'HACKSTORM - Code the Storm',
+    image: 'images/achivement-Image/HackStormIMG.png', // Using existing image as placeholder
+    date: 'Oct 31 - Nov 1, 2025',
+    location: 'Kukas, India',
+    attendees: 'Team Size: 2-6 members',
+    description: 'Join Hacker\'s Unity for an electrifying 24-hour hackathon where your creativity, coding skills, and problem-solving abilities will be put to the ultimate test! 💻🔥 Highlights include swags, goodies, exciting prizes, internship & PPO opportunities, certificates, networking, workshops, and on-site food facility.',
+    status: 'Upcoming',
+    registerLink: 'https://hackstrom-1.devfolio.co'
   },
+  // {
+  //   id: 2,
+  //   title: 'Hack Node India By Blockseblock',
+  //   image: 'images/achivement-Image/HackNodeIndia.jpg',
+  //   date: '10th Aug - 31st Aug',
+  //   location: 'Hybrid: Australia, USA, India',
+  //   attendees: 'Global Participants',
+  //   description: 'Hack Node India presents a hands-on workshop series for students to build with AI, Web3, gaming, and more. Learn from experts, build real projects, win from a $5,000 prize pool, and get a chance to compete for $100,000 and an incubation opportunity in Dubai through the Global Accelerator Program.',
+  //   status: 'Completed',
+  //   detailsLink: "https://blockseblock.com/hackathon_details/Hack%20Node%20India"
+  // },
   {
-    id: 2,
+    id: 3,
     title: 'India Blockchain Month 2025',
     image: 'images/achivement-Image/INBM.png',
     date: 'September 2025',
     location: '20+ Cities Across India',
     attendees: '73,000+ Expected',
     description: 'India Blockchain Month (INBM) is the world\'s largest community-led celebration of Web3, Blockchain, AI, and the Open Internet. Spanning 20+ cities — from tech hubs to emerging Tier 2 & 3 towns.',
-    status: 'Upcoming'
+    status: 'Completed',
+    detailsLink: "https://www.indiablockchainmonth.com/inbm2025/"
   },
-   {
-    id: 3,
+  {
+    id: 4,
     title: 'WCHL 2025 - World Computer Hacker League',
     image: 'images/achivement-Image/wchl2025event.jpeg',
     date: 'July 1 – July 25, 2025',
     location: '100% Online',
     attendees: 'Global Participants',
     description: 'The World Computer Hacker League (WCHL) 2025 is a global hackathon led by the ICP HUBS Network. This 4-month journey ensures teams deliver polished, mainnet-deployed MVPs with direct access to ICP HUBS and DFINITY engineers.',
-    status: 'Completed'
+    status: 'Completed',
+    detailsLink: "https://dorahacks.io/hackathon/wchl25-qualification-round/detail"
   },
-  
 ];
 
 const Events = () => {
@@ -140,7 +153,7 @@ const Events = () => {
                 
                 {event.status !== 'Completed' && (
                   <motion.a
-                    href={event.id === 1 ? "https://blockseblock.com/hackathon_details/Hack%20Node%20India" : event.id === 2 ? "https://www.indiablockchainmonth.com/inbm2025/" : "#"}
+                    href={event.registerLink || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     variants={buttonVariants}
@@ -168,7 +181,7 @@ const Events = () => {
                 )}
                 {event.status === 'Completed' && (
                   <motion.a
-                    href="https://dorahacks.io/hackathon/wchl25-qualification-round/detail"
+                    href={event.detailsLink || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     variants={buttonVariants}

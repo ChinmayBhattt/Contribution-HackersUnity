@@ -129,7 +129,7 @@ const Hero = () => {
               }}
               className="inline-block mb-4 px-4 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary"
             >
-              <span className="mr-2">✨</span> India's Premier Hackathon Community
+              <span className="mr-2">✨</span> India's Fastest-Growing Community
             </motion.div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -140,8 +140,8 @@ const Hero = () => {
               variants={fadeInUp}
               className="text-xl text-gray-300 mb-8 leading-relaxed"
             >
-              Join our vibrant community of passionate developers, designers, and tech enthusiasts. 
-              Learn, build, and grow together through hackathons, workshops, and collaborative projects.
+              Hacker’s Unity is India’s leading tech community, uniting developers, innovators, and technology enthusiasts across the nation.
+Hacker’s Unity is driven by a mission to empower students with real-world skills and connect them with industry opportunities.
             </motion.p>
             
             <motion.div 
@@ -358,7 +358,7 @@ const Hero = () => {
                 ease: "easeOut" 
               }}
             >
-              500+
+              10,000+
             </motion.p>
             <motion.p 
               className="text-gray-300"
@@ -448,7 +448,7 @@ const Hero = () => {
                 ease: "easeOut" 
               }}
             >
-              8+
+              20+
             </motion.p>
             <motion.p 
               className="text-gray-300"
@@ -493,7 +493,7 @@ const Hero = () => {
                 ease: "easeOut" 
               }}
             >
-              3+
+              11+
             </motion.p>
             <motion.p 
               className="text-gray-300"

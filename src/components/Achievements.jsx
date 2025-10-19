@@ -15,7 +15,7 @@ const achievementData = [
     id: 2,
     icon: <UserGroupIcon className="h-10 w-10 text-accent" />,
     title: 'Community Members',
-    value: '500+',
+    value: '10000+',
     description: 'Active members from around the world'
   },
   {
@@ -36,42 +36,42 @@ const achievementData = [
 
 // Achievement showcase images with descriptions
 const achievementImages = [
-  {
-    id: 1,
-    image: 'images/achivement-Image/img14.jpeg',
-    title: 'Hack Arya Verse 2025',
-    description: 'A National Level Hackathon, Organize by Jha Suraj Kumar'
-  },
-  {
-    id: 2,
-    image: 'images/achivement-Image/img13.jpg',
-    title: 'AceHack 4.0 Pre-Meet Up in ACEIT',
-    description: 'Organize By Jha Suraj Kumar'
-  },
-  {
-    id: 3,
-    image: 'images/achivement-Image/img15.jpeg',
-    title: 'Hack Arya Verse 1.0',
-    description: 'Main Lead - Jha Suraj Kumar, Succesfully Organize National Hackathon'
-  },
-  {
-    id: 4,
-    image: 'images/achivement-Image/img5.jpg',
-    title: 'Skill Improvement Workshop',
-    description: 'Hands-on learning with cutting-edge artificial intelligence technologies by Jha Suraj Kumar'
-  },
-  {
-    id: 5,
-    image: 'images/achivement-Image/wchl2025.jpeg',
-    title: 'WCHL 2025 GLOBAL HACKATHON',
-    description: 'World Computer Hacker League (WCHL) 2025 is a global hackathon led by the ICP HUBS Network.'
-  },
-  {
-    id: 6,
-    image: 'images/achivement-Image/img9.jpg',
-    title: 'Hardware Skill Improvement Workshop',
-    description: 'Recognizing breakthrough projects in Arduino technology'
-  }
+  // {
+  //   id: 1,
+  //   image: 'images/achivement-Image/img14.jpeg',
+  //   title: 'Hack Arya Verse 2025',
+  //   description: 'A National Level Hackathon, Organize by Jha Suraj Kumar'
+  // },
+  // {
+  //   id: 2,
+  //   image: 'images/achivement-Image/img13.jpg',
+  //   title: 'AceHack 4.0 Pre-Meet Up in ACEIT',
+  //   description: 'Organize By Jha Suraj Kumar'
+  // },
+  // {
+  //   id: 3,
+  //   image: 'images/achivement-Image/img15.jpeg',
+  //   title: 'Hack Arya Verse 1.0',
+  //   description: 'Main Lead - Jha Suraj Kumar, Succesfully Organize National Hackathon'
+  // },
+  // {
+  //   id: 4,
+  //   image: 'images/achivement-Image/img5.jpg',
+  //   title: 'Skill Improvement Workshop',
+  //   description: 'Hands-on learning with cutting-edge artificial intelligence technologies by Jha Suraj Kumar'
+  // },
+  // {
+  //   id: 5,
+  //   image: 'images/achivement-Image/wchl2025.jpeg',
+  //   title: 'WCHL 2025 GLOBAL HACKATHON',
+  //   description: 'World Computer Hacker League (WCHL) 2025 is a global hackathon led by the ICP HUBS Network.'
+  // },
+  // {
+  //   id: 6,
+  //   image: 'images/achivement-Image/img9.jpg',
+  //   title: 'Hardware Skill Improvement Workshop',
+  //   description: 'Recognizing breakthrough projects in Arduino technology'
+  // }
 ];
 
 const Achievements = () => {
@@ -194,10 +194,10 @@ const Achievements = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-24"
         >
-          <h3 className="text-3xl font-bold mb-10 text-center gradient-text">
+          {/* <h3 className="text-3xl font-bold mb-10 text-center gradient-text">
             Showcase Gallery
           </h3>
-          
+           */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {achievementImages.map((item) => (
               <motion.div

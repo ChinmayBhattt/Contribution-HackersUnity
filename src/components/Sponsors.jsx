@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const sponsorLogos = [
   { id: 1, name: 'Google', logo: 'https://cdn-icons-png.flaticon.com/512/2875/2875404.png' },
   { id: 2, name: 'Microsoft', logo: 'images/sponsor/Microsoft.png' },
-  { id: 3, name: 'Hoko Ice Cream', logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQGQNuA8-teKSw/company-logo_200_200/company-logo_200_200/0/1699446881028/hrpl_restaurants_pvtltd_logo?e=2147483647&v=beta&t=9uP_BHZuSMYfLQQxLQ_xlrgk8EQ0i-qHh8QxUGt3yqM' },
+  // { id: 3, name: 'Hoko Ice Cream', logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQGQNuA8-teKSw/company-logo_200_200/company-logo_200_200/0/1699446881028/hrpl_restaurants_pvtltd_logo?e=2147483647&v=beta&t=9uP_BHZuSMYfLQQxLQ_xlrgk8EQ0i-qHh8QxUGt3yqM' },
 ];
 
 // Community Partners logos
