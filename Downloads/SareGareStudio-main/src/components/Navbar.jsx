@@ -33,9 +33,9 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group">
-                    <div className="p-2 bg-gradient-to-tr from-brand-purple to-brand-blue rounded-lg group-hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all duration-300">
-                        <Music className="text-white w-6 h-6" />
-                    </div>
+                    {/* <div className="p-2 bg-gradient-to-tr from-brand-purple to-brand-blue rounded-lg group-hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all duration-300"> */}
+                        {/* <Music className="text-white w-6 h-6" /> */}
+                    {/* </div> */}
                     <span className="text-2xl font-heading font-bold tracking-wide text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-300">
                         SareGare <span className="text-brand-purple">Studio</span>
                     </span>

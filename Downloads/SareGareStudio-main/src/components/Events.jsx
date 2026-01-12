@@ -13,11 +13,11 @@ const placeholders = {
 const eventsData = [
     {
         id: 1,
-        title: "Neon Horizon Festival",
-        date: "Dec 31, 2025",
+        title: "YamRaj",
+        date: "March 31, 2026",
         location: "Mumbai Arena, India",
         image: placeholders.techno,
-        category: "Music Festival",
+        category: "Music Video",
         description: "Experience the future of sound at Neon Horizon. A multi-sensory journey featuring top global DJs, immersive 3D visuals, and a countdown like no other.",
         artists: ["DJ Snake", "Ritviz", "Nucleya"],
         sponsors: [dosteaImg]
@@ -35,7 +35,7 @@ const eventsData = [
     },
     {
         id: 3,
-        title: "Indie Films Showcase",
+        title: "Indie Films",
         date: "Feb 20, 2026",
         location: "PVR Icon, Mumbai",
         image: placeholders.studio,
@@ -249,9 +249,9 @@ const Events = () => {
                         </p>
                     </div>
 
-                    <button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-all font-medium uppercase tracking-wider text-sm">
+                    {/* <button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-all font-medium uppercase tracking-wider text-sm">
                         View All Archive
-                    </button>
+                    </button> */}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

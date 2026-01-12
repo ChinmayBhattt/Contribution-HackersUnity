@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Twitter, Instagram, Linkedin } from 'lucide-react';
 import chinmayImg from './images/chinmay.jpg';
 import harshImg from './images/harsh.png';
-import ansulImg from './images/anshul.png';
+import bhwaniImg from './images/bhawani.jpeg';
 
 
 const teamMembers = [
@@ -26,14 +26,14 @@ const teamMembers = [
         }
     },
 
-    // {
-    //     name: 'Anshul Patidar',
-    //     role: 'CTO',
-    //     image: ansulImg,
-    //     social: {
-    //         instagram: 'https://www.instagram.com/anshulpatidar.12',
-    //     }
-    // }
+    {
+        name: 'Bhawani Singh Rathore',
+        role: 'Chairman & Director',
+        image: bhwaniImg,
+        social: {
+            instagram: 'https://instagram.com/bhawani5819',
+        }
+    }
 ];
 
 const About = () => {

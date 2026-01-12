@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Twitter, Instagram, Mail, Phone, MapPin, Linkedin, Youtube } from 'lucide-react';
+import { Twitter, Instagram, Mail, Phone, MapPin, Linkedin, Youtube, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
 import toast from 'react-hot-toast';
@@ -56,7 +56,7 @@ const Footer = () => {
                             Amplify your sound with the best production studio in town. We bring your musical vision to life.
                         </p>
                         <div className="flex gap-4">
-                            <a href="https://instagram.com/saregareproduction" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-purple transition-all">
+                            <a href="https://instagram.com/saregarestudio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-purple transition-all">
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <a href="https://twitter.com/saregarestudio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-blue transition-all">
@@ -75,13 +75,24 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
                         <ul className="space-y-4">
-                            {['Home', 'About', 'Services', 'Events', 'Sponsors', 'Work With Us'].map((item) => (
+                            {['Home', 'About', 'Services', 'Events', 'Sponsors', ].map((item) => (
                                 <li key={item}>
                                     <Link to={`/${item === 'Home' ? '' : item === 'Work With Us' ? 'join-team' : item.toLowerCase().replace('artists', 'about')}`} className="text-gray-400 hover:text-brand-gold transition-colors">
                                         {item}
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <a
+                                    href="https://calendly.com/chinmaybhatt26/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-brand-gold font-bold hover:text-white transition-all transform hover:translate-x-1 hover:shadow-lg"
+                                >
+                                    <Calendar size={16} />
+                                    Schedule a Meeting
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

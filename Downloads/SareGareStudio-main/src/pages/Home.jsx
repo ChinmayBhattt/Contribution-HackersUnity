@@ -49,7 +49,7 @@ const Home = () => {
                 <Navbar />
                 <main>
                     <Hero />
-                    <MusicShowcase />
+                    {/* <MusicShowcase /> */}
                     <Events />
                     <Services />
                     <PartnerCTA />
