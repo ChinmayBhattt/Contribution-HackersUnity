@@ -34,3 +34,21 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-purple via-brand-blue to-brand-gold;
   }
 }
+
+/* Hero Moving Background Animation */
+@keyframes hero-pan {
+  0% {
+    transform: scale(1.2) translateX(0);
+  }
+  50% {
+    transform: scale(1.2) translateX(-10%);
+  }
+  100% {
+    transform: scale(1.2) translateX(0);
+  }
+}
+
+.hero-moving-bg {
+  animation: hero-pan 25s ease-in-out infinite;
+  will-change: transform;
+}

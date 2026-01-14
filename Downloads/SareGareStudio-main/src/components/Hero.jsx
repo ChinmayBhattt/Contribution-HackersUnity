@@ -34,6 +34,23 @@ const Hero = () => {
             onMouseMove={handleMouseMove}
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark perspective-1000"
         >
+            {/* Moving Studio Background */}
+            <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+                <div
+                    className="absolute inset-0 w-[120%] h-full hero-moving-bg"
+                    style={{
+                        backgroundImage: 'url(/src/images/herobackground.webp)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        imageRendering: 'auto',
+                    }}
+                />
+                {/* Subtle overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/70 via-brand-dark/40 to-transparent" />
+                <div className="absolute inset-0 bg-brand-dark/15" />
+            </div>
+
             {/* Background Animation & Noise - Optimized */}
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
                 <motion.div style={{ y: y1, x: -50 }} className="absolute top-0 -left-4 w-[500px] h-[500px] bg-brand-purple/30 filter blur-[80px] opacity-20 animate-blob will-change-transform"></motion.div>
@@ -106,7 +123,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                         animate={{ opacity: 1, scale: 1, rotate: 0 }}
                         transition={{ duration: 1.5, type: "spring" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-96 glass-card rounded-3xl p-6 border border-white/20 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-96 bg-black/20 backdrop-blur-sm rounded-3xl p-6 border border-white/10 flex flex-col justify-between z-20"
                     >
                         <div className="flex justify-between items-start">
                             <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-purple to-brand-blue flex items-center justify-center text-white">
@@ -145,7 +162,7 @@ const Hero = () => {
 
                         <div>
                             <h3 className="text-white font-bold text-xl mb-1">Production Hub</h3>
-                            <p className="text-gray-400 text-xs">Dolby Atmos • 8K Video • Hi-Res Audio</p>
+                            <p className="text-gray-400 text-xs">SareGare • 8K Video • Studio</p>
                         </div>
                     </motion.div>
 
@@ -153,7 +170,7 @@ const Hero = () => {
                     <motion.div
                         animate={{ y: [0, -15, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-20 right-10 w-24 h-24 glass rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-md z-10 will-change-transform"
+                        className="absolute top-20 right-10 w-24 h-24 bg-black/20 rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-sm z-10 will-change-transform"
                     >
                         <Mic className="text-brand-blue w-10 h-10" />
                     </motion.div>
@@ -162,7 +179,7 @@ const Hero = () => {
                     <motion.div
                         animate={{ y: [0, 20, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute bottom-32 left-0 w-20 h-20 glass rounded-full flex items-center justify-center border border-white/10 backdrop-blur-md z-30 will-change-transform"
+                        className="absolute bottom-32 left-0 w-20 h-20 bg-black/20 rounded-full flex items-center justify-center border border-white/10 backdrop-blur-sm z-30 will-change-transform"
                     >
                         <Layers className="text-brand-gold w-8 h-8" />
                     </motion.div>
