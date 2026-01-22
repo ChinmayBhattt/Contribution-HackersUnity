@@ -67,12 +67,12 @@ const Team = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
+      transition: {
+        type: "spring",
+        stiffness: 100,
         damping: 12,
         duration: 0.5
       }
@@ -81,28 +81,28 @@ const Team = () => {
 
   const imageVariants = {
     hidden: { scale: 0.8, opacity: 0 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
+      transition: {
+        type: "spring",
+        stiffness: 100,
         damping: 10,
         duration: 0.5
       }
     },
-    hover: { 
+    hover: {
       scale: 1.05,
       boxShadow: "0px 10px 25px rgba(79, 70, 229, 0.4)",
-      transition: { 
-        duration: 0.3, 
-        ease: "easeInOut" 
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
       }
     }
   };
 
   return (
-    <section id="team" className="py-24 relative overflow-hidden bg-gradient-to-b from-gray-900 to-primary">
+    <section id="team" className="py-24 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-primary">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full filter blur-3xl"></div>
@@ -117,10 +117,10 @@ const Team = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Meet Our Team
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             The passionate individuals behind Hacker's Unity who are dedicated to building and
             supporting our vibrant tech community
           </p>
@@ -132,13 +132,13 @@ const Team = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold text-center text-white mb-16 relative inline-block"
+            className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-16 relative inline-block"
           >
             <span className="relative z-10">Founders</span>
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent"></span>
           </motion.h3>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto"
             variants={containerVariants}
             initial="hidden"
@@ -150,7 +150,7 @@ const Team = () => {
                 variants={itemVariants}
                 className="glass-effect rounded-2xl p-8 flex flex-col items-center text-center group"
               >
-                <motion.div 
+                <motion.div
                   className="mb-8 relative"
                   variants={imageVariants}
                   whileHover="hover"
@@ -166,19 +166,18 @@ const Team = () => {
                     {founder.role}
                   </div>
                 </motion.div>
-                
-                <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300">
+
+                <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-accent transition-colors duration-300">
                   {founder.name}
                 </h4>
-                
-                <p className="text-gray-300 mb-6">{founder.bio}</p>
-                
+
+                <p className="text-gray-600 dark:text-gray-300 mb-6">{founder.bio}</p>
+
                 <div className="flex space-x-6">
                   <motion.a
-                    href={founder.social.linkedin}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors duration-300"
+                    className="bg-gray-200 dark:bg-white/10 p-3 rounded-full hover:bg-gray-300 dark:hover:bg-white/20 transition-colors duration-300 text-gray-700 dark:text-white"
                   >
                     <LinkedInIcon />
                   </motion.a>
@@ -186,7 +185,7 @@ const Team = () => {
                     href={founder.social.twitter}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors duration-300"
+                    className="bg-gray-200 dark:bg-white/10 p-3 rounded-full hover:bg-gray-300 dark:hover:bg-white/20 transition-colors duration-300 text-gray-700 dark:text-white"
                   >
                     <TwitterIcon />
                   </motion.a>
@@ -194,7 +193,7 @@ const Team = () => {
                     href={founder.social.instagram}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors duration-300"
+                    className="bg-gray-200 dark:bg-white/10 p-3 rounded-full hover:bg-gray-300 dark:hover:bg-white/20 transition-colors duration-300 text-gray-700 dark:text-white"
                   >
                     <InstagramIcon />
                   </motion.a>
@@ -210,10 +209,10 @@ const Team = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-20 text-center bg-gradient-to-r from-secondary/20 to-accent/20 rounded-2xl p-10 max-w-4xl mx-auto"
+          className="mt-20 text-center bg-gradient-to-r from-secondary/10 to-accent/10 dark:from-secondary/20 dark:to-accent/20 rounded-2xl p-10 max-w-4xl mx-auto"
         >
-          <h4 className="text-2xl font-bold text-white mb-6">Join Our Team</h4>
-          <p className="text-gray-300 mb-8 text-lg">
+          <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Join Our Team</h4>
+          <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">
             We're always looking for talented individuals who are passionate about technology and community building.
             If you're excited about making an impact in the tech world, we'd love to hear from you!
           </p>
@@ -221,7 +220,7 @@ const Team = () => {
             href="https://forms.gle/CBN36n3sssEr31Lo8"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               boxShadow: "0px 5px 15px rgba(79, 70, 229, 0.4)"
             }}
@@ -229,24 +228,24 @@ const Team = () => {
             className="btn btn-secondary inline-flex items-center space-x-2"
           >
             <span>View Open Positions</span>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-5 w-5" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M17 8l4 4m0 0l-4 4m4-4H3" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
           </motion.a>
         </motion.div>
       </div>
-      
+
       {/* Binary code background effect */}
       <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full flex flex-wrap text-xs text-secondary/50 font-mono">

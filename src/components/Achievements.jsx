@@ -8,7 +8,7 @@ const achievementData = [
     id: 1,
     icon: <TrophyIcon className="h-10 w-10 text-accent" />,
     title: 'Hackathons Organized',
-    value: '8+',
+    value: '10+',
     description: 'Successful hackathons with global participation'
   },
   {
@@ -88,8 +88,8 @@ const Achievements = () => {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.6, ease: "easeOut" }
     },
@@ -102,12 +102,12 @@ const Achievements = () => {
 
   const numberVariants = {
     hidden: { opacity: 0, scale: 0.5 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
-        type: "spring", 
-        stiffness: 200, 
+      transition: {
+        type: "spring",
+        stiffness: 200,
         damping: 10,
         delay: 0.2
       }
@@ -115,7 +115,7 @@ const Achievements = () => {
   };
 
   return (
-    <section id="achievements" className="py-24 bg-gradient-to-b from-primary/90 to-primary">
+    <section id="achievements" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -126,12 +126,12 @@ const Achievements = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
             Our Achievements
           </h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
             Celebrating our milestones and impact in the global tech community
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -146,33 +146,33 @@ const Achievements = () => {
             >
               <div className="absolute -right-16 -top-16 w-32 h-32 bg-accent/10 rounded-full group-hover:scale-150 transition-all duration-700"></div>
               <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-secondary/10 rounded-full group-hover:scale-150 transition-all duration-700"></div>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex justify-center mb-6 relative z-10"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               >
-                <div className="p-4 rounded-full bg-primary/50 border border-accent/30">
+                <div className="p-4 rounded-full bg-white/50 dark:bg-primary/50 border border-accent/30 text-accent">
                   {item.icon}
                 </div>
               </motion.div>
-              
-              <h3 className="text-xl font-semibold mb-3 text-white relative z-10">
+
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white relative z-10">
                 {item.title}
               </h3>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-4xl font-bold text-accent mb-4 relative z-10"
                 variants={numberVariants}
               >
                 {item.value}
               </motion.p>
-              
-              <p className="text-gray-300 relative z-10">{item.description}</p>
+
+              <p className="text-gray-600 dark:text-gray-300 relative z-10">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -186,7 +186,7 @@ const Achievements = () => {
             </svg>
           </a> */}
         </motion.div>
-        
+
         {/* Achievement Showcase with Images */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -210,18 +210,18 @@ const Achievements = () => {
                 onMouseLeave={() => setHoveredImage(null)}
               >
                 {/* Border Animation */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 z-10 rounded-xl pointer-events-none"
                   animate={{
-                    boxShadow: hoveredImage === item.id 
+                    boxShadow: hoveredImage === item.id
                       ? ['0px 0px 0px 0px rgba(255,87,34,0)', '0px 0px 0px 3px rgba(255,87,34,0.7)']
                       : '0px 0px 0px 0px rgba(255,87,34,0)'
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 />
-                
+
                 {/* Corner Accents */}
-                <motion.div 
+                <motion.div
                   className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-accent z-20 rounded-tl-lg"
                   animate={{
                     width: hoveredImage === item.id ? [40, 60] : 40,
@@ -230,8 +230,8 @@ const Achievements = () => {
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 />
-                
-                <motion.div 
+
+                <motion.div
                   className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-accent z-20 rounded-br-lg"
                   animate={{
                     width: hoveredImage === item.id ? [40, 60] : 40,
@@ -240,9 +240,9 @@ const Achievements = () => {
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 />
-                
+
                 {/* Image */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${item.image})` }}
                   animate={{
@@ -250,18 +250,18 @@ const Achievements = () => {
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
-                
+
                 {/* Overlay */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent"
                   animate={{
                     opacity: hoveredImage === item.id ? 0.9 : 0.7
                   }}
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 {/* Content */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-0 left-0 right-0 p-6 z-20"
                   animate={{
                     y: hoveredImage === item.id ? 0 : 10,
@@ -269,7 +269,7 @@ const Achievements = () => {
                   }}
                   transition={{ duration: 0.4 }}
                 >
-                  <motion.h4 
+                  <motion.h4
                     className="text-xl font-bold text-white mb-2"
                     animate={{
                       y: hoveredImage === item.id ? 0 : 10,
@@ -278,8 +278,8 @@ const Achievements = () => {
                   >
                     {item.title}
                   </motion.h4>
-                  
-                  <motion.p 
+
+                  <motion.p
                     className="text-gray-200 text-sm"
                     animate={{
                       y: hoveredImage === item.id ? 0 : 20,

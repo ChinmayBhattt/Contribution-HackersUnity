@@ -8,13 +8,13 @@ const Hero = () => {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
-        damping: 12 
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
       }
     }
   };
@@ -31,13 +31,13 @@ const Hero = () => {
   };
 
   const buttonHover = {
-    hover: { 
-      scale: 1.05, 
+    hover: {
+      scale: 1.05,
       boxShadow: "0px 10px 20px rgba(79, 70, 229, 0.4)",
-      transition: { 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 10 
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
       }
     },
     tap: { scale: 0.95 }
@@ -45,23 +45,23 @@ const Hero = () => {
 
   const statsItem = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
-        damping: 10 
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
       }
     }
   };
 
   return (
-    <section className="hero-gradient py-16 md:py-24 min-h-screen flex items-center">
+    <section className="bg-gradient-to-br from-gray-50 via-gray-100 to-blue-50 dark:from-primary dark:via-primary/95 dark:to-primary-900 relative overflow-hidden py-16 md:py-24 min-h-screen flex items-center">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated Gradient Circle 1 */}
-        <motion.div 
+        <motion.div
           className="absolute -top-20 -left-20 w-96 h-96 bg-secondary opacity-10 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
@@ -73,9 +73,9 @@ const Hero = () => {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* Animated Gradient Circle 2 */}
-        <motion.div 
+        <motion.div
           className="absolute top-1/3 -right-20 w-80 h-80 bg-accent opacity-10 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
@@ -87,9 +87,9 @@ const Hero = () => {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* Animated Code Pattern Background */}
-        <motion.div 
+        <motion.div
           className="code-pattern"
           animate={{
             backgroundPosition: ['0% 0%', '100% 100%']
@@ -100,7 +100,7 @@ const Hero = () => {
             ease: "linear"
           }}
         />
-        
+
         {/* Digital Grid Lines */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       </div>
@@ -117,7 +117,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
+              transition={{
                 duration: 0.8,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
@@ -131,20 +131,20 @@ const Hero = () => {
             >
               <span className="mr-2">✨</span> India's Fastest-Growing Community
             </motion.div>
-            
+
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="gradient-text">Hacker's Unity</span>
             </h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={fadeInUp}
-              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
             >
               Hacker’s Unity is India’s leading tech community, uniting developers, innovators, and technology enthusiasts across the nation.
-Hacker’s Unity is driven by a mission to empower students with real-world skills and connect them with industry opportunities.
+              Hacker’s Unity is driven by a mission to empower students with real-world skills and connect them with industry opportunities.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-4"
               variants={staggerContainer}
               initial="hidden"
@@ -153,7 +153,7 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
               {isSignedIn ? (
                 <motion.div variants={fadeInUp}>
                   <Link to="/dashboard">
-                    <motion.button 
+                    <motion.button
                       // className="btn btn-primary inline-flex items-center space-x-2"
                       variants={buttonHover}
                       whileHover="hover"
@@ -169,7 +169,7 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
               ) : (
                 <motion.div variants={fadeInUp}>
                   <Link to="/sign-up">
-                    <motion.button 
+                    <motion.button
                       className="btn btn-primary inline-flex items-center space-x-2"
                       variants={buttonHover}
                       whileHover="hover"
@@ -183,10 +183,10 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
                   </Link>
                 </motion.div>
               )}
-              
+
               <motion.div variants={fadeInUp}>
                 <Link to="/events">
-                  <motion.button 
+                  <motion.button
                     className="btn btn-secondary inline-flex items-center space-x-2"
                     variants={buttonHover}
                     whileHover="hover"
@@ -206,25 +206,25 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ 
+            transition={{
               type: "spring",
               stiffness: 50,
               damping: 20,
-              delay: 0.2 
+              delay: 0.2
             }}
             className="lg:w-1/2 relative"
           >
-            <motion.div 
+            <motion.div
               className="relative z-10"
               animate={{ y: [0, -15, 0] }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 4, 
-                ease: "easeInOut" 
+              transition={{
+                repeat: Infinity,
+                duration: 4,
+                ease: "easeInOut"
               }}>
               <div className="w-full h-80 flex items-center justify-center relative">
                 {/* Shield */}
-                <motion.div 
+                <motion.div
                   className="w-64 h-64 border-4 border-secondary rounded-full flex items-center justify-center relative glow-pulse"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
@@ -232,35 +232,35 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
                   {/* Shield inner */}
                   <div className="w-56 h-56 bg-primary-900 rounded-full flex items-center justify-center">
                     {/* HU Float SVG */}
-                    <motion.img 
-                      src="images/hu-float.png" 
-                      alt="HU Logo" 
+                    <motion.img
+                      src="images/hu-float.png"
+                      alt="HU Logo"
                       className="w-50 h-44"
-                      animate={{ 
+                      animate={{
                         scale: [1, 1.05, 1],
                         rotate: [0, 2, 0, -2, 0]
                       }}
-                      transition={{ 
-                        repeat: Infinity, 
+                      transition={{
+                        repeat: Infinity,
                         duration: 4,
-                        ease: "easeInOut" 
+                        ease: "easeInOut"
                       }}
                     />
                   </div>
                 </motion.div>
-                
+
                 {/* Animated particles */}
-                <motion.div 
+                <motion.div
                   className="absolute top-0 right-0 w-4 h-4 rounded-full bg-accent"
-                  animate={{ 
+                  animate={{
                     y: [0, 20, 0],
                     opacity: [0.2, 1, 0.2]
                   }}
                   transition={{ repeat: Infinity, duration: 3 }}
                 />
-                <motion.div 
+                <motion.div
                   className="absolute bottom-10 left-10 w-3 h-3 rounded-full bg-secondary"
-                  animate={{ 
+                  animate={{
                     y: [0, -15, 0],
                     opacity: [0.3, 1, 0.3]
                   }}
@@ -268,57 +268,57 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
                 />
               </div>
             </motion.div>
-            
+
             {/* Floating code elements */}
-            <motion.div 
+            <motion.div
               className="absolute top-5 right-10 bg-secondary/10 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-secondary/30"
-              animate={{ 
+              animate={{
                 y: [0, -10, 0],
                 rotate: [0, 2, 0]
               }}
-              transition={{ 
-                repeat: Infinity, 
+              transition={{
+                repeat: Infinity,
                 duration: 3,
-                ease: "easeInOut" 
+                ease: "easeInOut"
               }}
             >
               <div className="text-secondary font-mono font-bold">{'<Code/>'}</div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="absolute bottom-20 left-5 bg-accent/10 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-accent/30"
-              animate={{ 
+              animate={{
                 y: [0, 10, 0],
                 x: [0, 5, 0]
               }}
-              transition={{ 
-                repeat: Infinity, 
+              transition={{
+                repeat: Infinity,
                 duration: 4,
-                ease: "easeInOut" 
+                ease: "easeInOut"
               }}
             >
               <div className="text-accent font-mono font-bold">{'{ }'}</div>
             </motion.div>
-            
+
             {/* Additional floating element */}
-            <motion.div 
-              className="absolute top-1/2 right-5 bg-white/5 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-white/10"
-              animate={{ 
+            <motion.div
+              className="absolute top-1/2 right-5 bg-white/80 dark:bg-white/5 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-gray-200 dark:border-white/10"
+              animate={{
                 rotate: [0, 5, 0, -5, 0],
                 scale: [1, 1.05, 1]
               }}
-              transition={{ 
-                repeat: Infinity, 
+              transition={{
+                repeat: Infinity,
                 duration: 5,
-                ease: "easeInOut" 
+                ease: "easeInOut"
               }}
             >
-              <div className="text-white font-mono text-sm">
+              <div className="text-gray-900 dark:text-white font-mono text-sm">
                 <div className="text-secondary">function</div>
-                <div className="text-white">hackersUnity()</div>
-                <div className="text-white">{`{`}</div>
+                <div className="text-gray-800 dark:text-white">hackersUnity()</div>
+                <div className="text-gray-800 dark:text-white">{`{`}</div>
                 <div className="text-accent ml-2">return "success";</div>
-                <div className="text-white">{`}`}</div>
+                <div className="text-gray-800 dark:text-white">{`}`}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -331,180 +331,180 @@ Hacker’s Unity is driven by a mission to empower students with real-world skil
           animate="visible"
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 p-8 glass-effect rounded-2xl"
         >
-          <motion.div 
-            variants={statsItem} 
+          <motion.div
+            variants={statsItem}
             className="text-center"
             initial={{ opacity: 1 }}
-            animate={{ 
+            animate={{
               opacity: [0, 1],
               filter: ["blur(10px)", "blur(0px)"],
               scale: [0.8, 1]
             }}
-            transition={{ 
+            transition={{
               duration: 1.5,
               delay: 0.2,
               ease: "easeInOut"
             }}
           >
-            <motion.p 
-              className="text-4xl font-bold text-white mb-2"
-              animate={{ 
+            <motion.p
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-2"
+              animate={{
                 opacity: [0, 1],
                 y: [20, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.5,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               10,000+
             </motion.p>
-            <motion.p 
-              className="text-gray-300"
-              animate={{ 
+            <motion.p
+              className="text-gray-600 dark:text-gray-300"
+              animate={{
                 opacity: [0, 1],
                 y: [10, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.7,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               Community Members
             </motion.p>
           </motion.div>
-          
-          <motion.div 
-            variants={statsItem} 
+
+          <motion.div
+            variants={statsItem}
             className="text-center"
             initial={{ opacity: 1 }}
-            animate={{ 
+            animate={{
               opacity: [0, 1],
               filter: ["blur(10px)", "blur(0px)"],
               scale: [0.8, 1]
             }}
-            transition={{ 
+            transition={{
               duration: 1.5,
               delay: 0.4,
               ease: "easeInOut"
             }}
           >
-            <motion.p 
-              className="text-4xl font-bold text-white mb-2"
-              animate={{ 
+            <motion.p
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-2"
+              animate={{
                 opacity: [0, 1],
                 y: [20, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.7,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               15+
             </motion.p>
-            <motion.p 
-              className="text-gray-300"
-              animate={{ 
+            <motion.p
+              className="text-gray-600 dark:text-gray-300"
+              animate={{
                 opacity: [0, 1],
                 y: [10, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.9,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               Events Hosted
             </motion.p>
           </motion.div>
-          
-          <motion.div 
-            variants={statsItem} 
+
+          <motion.div
+            variants={statsItem}
             className="text-center"
             initial={{ opacity: 1 }}
-            animate={{ 
+            animate={{
               opacity: [0, 1],
               filter: ["blur(10px)", "blur(0px)"],
               scale: [0.8, 1]
             }}
-            transition={{ 
+            transition={{
               duration: 1.5,
               delay: 0.6,
               ease: "easeInOut"
             }}
           >
-            <motion.p 
-              className="text-4xl font-bold text-white mb-2"
-              animate={{ 
+            <motion.p
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-2"
+              animate={{
                 opacity: [0, 1],
                 y: [20, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.9,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               20+
             </motion.p>
-            <motion.p 
-              className="text-gray-300"
-              animate={{ 
+            <motion.p
+              className="text-gray-600 dark:text-gray-300"
+              animate={{
                 opacity: [0, 1],
                 y: [10, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 1.1,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               Projects Completed
             </motion.p>
           </motion.div>
-          
-          <motion.div 
-            variants={statsItem} 
+
+          <motion.div
+            variants={statsItem}
             className="text-center"
             initial={{ opacity: 1 }}
-            animate={{ 
+            animate={{
               opacity: [0, 1],
               filter: ["blur(10px)", "blur(0px)"],
               scale: [0.8, 1]
             }}
-            transition={{ 
+            transition={{
               duration: 1.5,
               delay: 0.8,
               ease: "easeInOut"
             }}
           >
-            <motion.p 
-              className="text-4xl font-bold text-white mb-2"
-              animate={{ 
+            <motion.p
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-2"
+              animate={{
                 opacity: [0, 1],
                 y: [20, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 1.1,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               11+
             </motion.p>
-            <motion.p 
-              className="text-gray-300"
-              animate={{ 
+            <motion.p
+              className="text-gray-600 dark:text-gray-300"
+              animate={{
                 opacity: [0, 1],
                 y: [10, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 1.3,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               Partner Companies
