@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import './App.css'
-import { SignedIn, SignedOut } from "@clerk/clerk-react"  
+import { SignedIn, SignedOut } from "@clerk/clerk-react"
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 // Import components
@@ -15,16 +15,23 @@ import Footer from './components/Footer'
 
 function App() {
   const location = useLocation();
-  
+
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  // Enforce Dark Mode
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+    localStorage.theme = 'dark';
+  }, []);
 
   return (
     <>
       <Navbar />
-      
+
       <main>
         <Routes>
           <Route path="/" element={
@@ -44,7 +51,7 @@ function App() {
           <Route path="/team" element={<Team />} />
         </Routes>
       </main>
-      
+
       <Footer />
     </>
   );
