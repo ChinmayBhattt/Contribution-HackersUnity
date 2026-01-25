@@ -22,7 +22,7 @@ const achievementData = [
     id: 3,
     icon: <BuildingOfficeIcon className="h-10 w-10 text-accent" />,
     title: 'Partner Organizations',
-    value: '11+',
+    value: '20+',
     description: 'Collaborations with leading tech companies'
   },
   {
@@ -124,7 +124,7 @@ const Achievements = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Our Achievements
+            Our Community Stats
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
             Celebrating our milestones and impact in the global tech community
