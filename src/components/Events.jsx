@@ -4,6 +4,17 @@ import { CalendarIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/out
 // Event data
 const events = [
   {
+    id: 0,
+    title: 'AceHack 5.0',
+    image: 'images/achivement-Image/acehack.png', // Placeholder image
+    date: 'Mar 7 - 8, 2026',
+    location: 'Jaipur, India',
+    attendees: 'Team Size: 1-4 members',
+    description: 'Rajasthan’s Biggest Student-Run Hackathon. 🔥 AceHack 5.0 is designed to bring students, innovators, and tech enthusiasts together from across the country. It’s a 36-hour event where participants collaborate, create, and solve real-world challenges through technology.',
+    status: 'Registrations Open',
+    registerLink: 'https://acehack5.devfolio.co/'
+  },
+  {
     id: 1,
     title: 'HACKSTORM - Code the Storm',
     image: 'images/achivement-Image/HackStormIMG.png', // Using existing image as placeholder
@@ -25,17 +36,17 @@ const events = [
   //   status: 'Completed',
   //   detailsLink: "https://blockseblock.com/hackathon_details/Hack%20Node%20India"
   // },
-  {
-    id: 3,
-    title: 'India Blockchain Month 2025',
-    image: 'images/achivement-Image/INBM.png',
-    date: 'September 2025',
-    location: '20+ Cities Across India',
-    attendees: '73,000+ Expected',
-    description: 'India Blockchain Month (INBM) is the world\'s largest community-led celebration of Web3, Blockchain, AI, and the Open Internet. Spanning 20+ cities — from tech hubs to emerging Tier 2 & 3 towns.',
-    status: 'Completed',
-    detailsLink: "https://www.indiablockchainmonth.com/inbm2025/"
-  },
+  // {
+  //   id: 3,
+  //   title: 'India Blockchain Month 2025',
+  //   image: 'images/achivement-Image/INBM.png',
+  //   date: 'September 2025',
+  //   location: '20+ Cities Across India',
+  //   attendees: '73,000+ Expected',
+  //   description: 'India Blockchain Month (INBM) is the world\'s largest community-led celebration of Web3, Blockchain, AI, and the Open Internet. Spanning 20+ cities — from tech hubs to emerging Tier 2 & 3 towns.',
+  //   status: 'Completed',
+  //   detailsLink: "https://www.indiablockchainmonth.com/inbm2025/"
+  // },
   {
     id: 4,
     title: 'WCHL 2025 - World Computer Hacker League',
@@ -255,13 +266,11 @@ const Events = () => {
               <div className="relative h-64 md:h-full overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-10"></div>
                 <img
-                  src="images/achivement-Image/img14.jpeg"
+                  src="images/hackstorm/IMG_0549.JPG"
                   alt="Event organization"
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute bottom-4 left-4 z-20 bg-accent/90 text-white text-sm font-semibold py-1 px-3 rounded-full">
-                  Event Organizer
-                </div>
+
               </div>
 
               {/* Right side - Content */}

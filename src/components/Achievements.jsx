@@ -115,7 +115,7 @@ const Achievements = () => {
   };
 
   return (
-    <section id="achievements" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
+    <section id="achievements" className="pt-12 pb-24 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
