@@ -1,6 +1,43 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
+import { useState, useEffect } from 'react';
+
+const sliderImages = [
+  "images/hackstorm/DSC04395.JPG",
+  "images/hackstorm/IMG_0478.JPG",
+  "images/hackstorm/IMG_0531.JPG",
+  "images/hackstorm/IMG_0549.JPG",
+  "images/hackstorm/IMG_0587.JPG"
+];
+
+const Slider = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % sliderImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative w-full h-full">
+      <AnimatePresence mode='wait'>
+        <motion.img
+          key={index}
+          src={sliderImages[index]}
+          alt={`Slide ${index}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.5 }}
+        />
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const Hero = () => {
   const { isSignedIn } = useAuth();
@@ -216,109 +253,15 @@ const Hero = () => {
           >
             <motion.div
               className="relative z-10"
-              animate={{ y: [0, -15, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 4,
-                ease: "easeInOut"
-              }}>
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="w-full h-80 flex items-center justify-center relative">
-                {/* Shield */}
-                <motion.div
-                  className="w-64 h-64 border-4 border-secondary rounded-full flex items-center justify-center relative glow-pulse"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                >
-                  {/* Shield inner */}
-                  <div className="w-56 h-56 bg-primary-900 rounded-full flex items-center justify-center">
-                    {/* HU Float SVG */}
-                    <motion.img
-                      src="images/hu-float.png"
-                      alt="HU Logo"
-                      className="w-50 h-44"
-                      animate={{
-                        scale: [1, 1.05, 1],
-                        rotate: [0, 2, 0, -2, 0]
-                      }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 4,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  </div>
-                </motion.div>
+                <div className="relative w-[320px] h-[220px] md:w-[480px] md:h-[320px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 backdrop-blur-sm">
+                  <Slider />
+                </div>
 
-                {/* Animated particles */}
-                <motion.div
-                  className="absolute top-0 right-0 w-4 h-4 rounded-full bg-accent"
-                  animate={{
-                    y: [0, 20, 0],
-                    opacity: [0.2, 1, 0.2]
-                  }}
-                  transition={{ repeat: Infinity, duration: 3 }}
-                />
-                <motion.div
-                  className="absolute bottom-10 left-10 w-3 h-3 rounded-full bg-secondary"
-                  animate={{
-                    y: [0, -15, 0],
-                    opacity: [0.3, 1, 0.3]
-                  }}
-                  transition={{ repeat: Infinity, duration: 2.5 }}
-                />
-              </div>
-            </motion.div>
-
-            {/* Floating code elements */}
-            <motion.div
-              className="absolute top-5 right-10 bg-secondary/10 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-secondary/30"
-              animate={{
-                y: [0, -10, 0],
-                rotate: [0, 2, 0]
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-                ease: "easeInOut"
-              }}
-            >
-              <div className="text-secondary font-mono font-bold">{'<Code/>'}</div>
-            </motion.div>
-
-            <motion.div
-              className="absolute bottom-20 left-5 bg-accent/10 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-accent/30"
-              animate={{
-                y: [0, 10, 0],
-                x: [0, 5, 0]
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 4,
-                ease: "easeInOut"
-              }}
-            >
-              <div className="text-accent font-mono font-bold">{'{ }'}</div>
-            </motion.div>
-
-            {/* Additional floating element */}
-            <motion.div
-              className="absolute top-1/2 right-5 bg-white/80 dark:bg-white/5 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-gray-200 dark:border-white/10"
-              animate={{
-                rotate: [0, 5, 0, -5, 0],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 5,
-                ease: "easeInOut"
-              }}
-            >
-              <div className="text-gray-900 dark:text-white font-mono text-sm">
-                <div className="text-secondary">function</div>
-                <div className="text-gray-800 dark:text-white">hackersUnity()</div>
-                <div className="text-gray-800 dark:text-white">{`{`}</div>
-                <div className="text-accent ml-2">return "success";</div>
-                <div className="text-gray-800 dark:text-white">{`}`}</div>
               </div>
             </motion.div>
           </motion.div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SignInButton, SignOutButton, UserButton, useAuth } from '@clerk/clerk-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ThemeToggle';
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,7 +56,7 @@ const Navbar = () => {
     },
     hover: {
       scale: 1.05,
-      color: "#4f46e5",
+      color: "#FF5722",
       transition: { type: "spring", stiffness: 400, damping: 10 }
     },
     tap: { scale: 0.95 }
@@ -92,7 +92,7 @@ const Navbar = () => {
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0px 5px 15px rgba(79, 70, 229, 0.4)",
+      boxShadow: "0px 5px 15px rgba(0, 163, 255, 0.4)",
       transition: { type: "spring", stiffness: 400, damping: 10 }
     },
     tap: { scale: 0.95 }
@@ -182,9 +182,6 @@ const Navbar = () => {
                     }}
                   />
                 </motion.div>
-                <div className="scale-75">
-                  <ThemeToggle />
-                </div>
               </div>
             ) : (
               <div className="flex items-center space-x-6">
@@ -198,18 +195,13 @@ const Navbar = () => {
                     Sign In
                   </motion.button>
                 </SignInButton>
-                <div className="scale-75">
-                  <ThemeToggle />
-                </div>
               </div>
             )}
           </motion.div>
 
           {/* Mobile Menu Button & Toggle (toggle before hamburger) */}
           <div className="md:hidden flex items-center space-x-4">
-            <div className="scale-75">
-              <ThemeToggle />
-            </div>
+
 
             <motion.button
               className="text-gray-800 dark:text-white"
