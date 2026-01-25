@@ -162,7 +162,7 @@ const Team = () => {
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
-                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-accent text-white text-sm font-semibold py-1 px-4 rounded-full">
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-accent text-white text-sm font-semibold py-1 px-4 rounded-full whitespace-nowrap w-max">
                     {founder.role}
                   </div>
                 </motion.div>

@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const partnerCompanies = [
   {
     id: 1,
-    name: 'Nextease Solutions',
-    logo: '/images/partners/nexteasesolutions.jpg',
-    description: 'Leading software development and IT consulting firm specializing in innovative solutions.',
-    website: 'https://www.nexteasesolutions.in'
+    name: 'Trainzex AI',
+    logo: '/images/partners/Trainzexai.png',
+    description: 'Transforming businesses with cutting-edge AI solutions and training.',
+    website: 'https://trainzexai.in'
   },
   {
     id: 2,
@@ -16,6 +16,13 @@ const partnerCompanies = [
     description: 'Pioneering research and development in emerging technologies and AI solutions.',
     website: 'https://dmetechnologies.com'
   },
+  {
+    id: 3,
+    name: 'Nextease Solutions ',
+    logo: '/images/partners/nexteasesolutions.jpg',
+    description: 'Leading software development and IT consulting firm specializing in innovative solutions.',
+    website: 'https://www.nexteasesolutions.in'
+  }
 ];
 
 const Partners = () => {
@@ -65,7 +72,7 @@ const Partners = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
