@@ -8,7 +8,7 @@ const achievementData = [
     id: 1,
     icon: <TrophyIcon className="h-10 w-10 text-accent" />,
     title: 'Hackathons Organized',
-    value: '10+',
+    value: '15+',
     description: 'Successful hackathons with global participation'
   },
   {
@@ -22,14 +22,14 @@ const achievementData = [
     id: 3,
     icon: <BuildingOfficeIcon className="h-10 w-10 text-accent" />,
     title: 'Partner Organizations',
-    value: '4+',
+    value: '11+',
     description: 'Collaborations with leading tech companies'
   },
   {
     id: 4,
     icon: <CalendarIcon className="h-10 w-10 text-accent" />,
     title: 'Events Conducted',
-    value: '15+',
+    value: '30+',
     description: 'Online and offline tech events'
   }
 ];
