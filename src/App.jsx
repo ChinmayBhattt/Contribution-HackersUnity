@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Achievements from './components/Achievements'
 import Sponsors from './components/Sponsors'
+import BecomeSponsor from './components/BecomeSponsor'
 import Partners from './components/Partners'
 import Events from './components/Events'
 import Team from './components/Team'
@@ -38,8 +39,9 @@ function App() {
             <>
               <Hero />
               <Achievements />
-              <Events />
               <Sponsors />
+              <Events />
+              <BecomeSponsor />
               <Partners />
               <Team />
             </>
