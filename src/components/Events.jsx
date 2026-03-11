@@ -5,14 +5,14 @@ import { CalendarIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/out
 const events = [
   {
     id: 0,
-    title: 'AceHack 5.0',
-    image: 'images/achivement-Image/acehack.png', // Placeholder image
-    date: 'Mar 7 - 8, 2026',
+    title: 'Clash of Coders 3.0',
+    image: 'images/achivement-Image/clashofcoders3.jpeg', // Placeholder image
+    date: 'Apr 11 - 12, 2026',
     location: 'Jaipur, India',
-    attendees: 'Team Size: 1-4 members',
-    description: 'Rajasthan’s Biggest Student-Run Hackathon. 🔥 AceHack 5.0 is designed to bring students, innovators, and tech enthusiasts together from across the country. It’s a 36-hour event where participants collaborate, create, and solve real-world challenges through technology.',
+    attendees: 'Team Size: 1-3 members',
+    description: 'Join Hackers Unity x JECRC Foundation for an electrifying 24-hour hackathon where your creativity, coding skills, and problem-solving abilities will be pushed to the next level',
     status: 'Registrations Open',
-    registerLink: 'https://acehack5.devfolio.co/'
+    registerLink: 'https://unstop.com/hackathons/clash-of-coders-hackathon-26-jaipur-engineering-college-and-research-center-jecrc-jaipur-1638287?'
   },
   {
     id: 1,
