@@ -20,6 +20,18 @@
     @apply text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
   }
 
+  /* Remove arrows/spinners from number inputs */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    /* Firefox */
+  }
+
   h2 {
     @apply text-3xl font-bold mb-3;
   }
@@ -206,7 +218,12 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
+  background: linear-gradient(90deg, #4f46e5, #f59e0b);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Scrollbar styling */

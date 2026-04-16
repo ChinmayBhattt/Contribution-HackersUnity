@@ -8,26 +8,19 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Achievements from './components/Achievements'
 import Sponsors from './components/Sponsors'
-import BecomeSponsor from './components/BecomeSponsor'
 import Partners from './components/Partners'
 import Events from './components/Events'
-import Team from './components/Team'
 import Footer from './components/Footer'
+import WorkWithHU from './pages/WorkWithHU'
 
+// Import components
 function App() {
   const location = useLocation();
 
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
-
-  // Enforce Dark Mode
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-    localStorage.theme = 'dark';
-  }, []);
 
   return (
     <>
@@ -39,18 +32,16 @@ function App() {
             <>
               <Hero />
               <Achievements />
-              <Sponsors />
               <Events />
-              <BecomeSponsor />
+              <Sponsors />
               <Partners />
-              <Team />
             </>
           } />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/work-with-hu" element={<WorkWithHU />} />
         </Routes>
       </main>
 
