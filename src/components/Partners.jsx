@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const partnerCompanies = [
   {
     id: 1,
-    name: 'Trainzex AI',
-    logo: '/images/partners/Trainzexai.png',
-    description: 'Transforming businesses with cutting-edge AI solutions and training.',
-    website: 'https://trainzexai.in'
+    name: 'Nextease Solutions',
+    logo: '/images/partners/nexteasesolutions.jpg',
+    description: 'Leading software development and IT consulting firm specializing in innovative solutions.',
+    website: 'https://www.nexteasesolutions.in'
   },
   {
     id: 2,
@@ -18,11 +18,11 @@ const partnerCompanies = [
   },
   {
     id: 3,
-    name: 'Nextease Solutions ',
-    logo: '/images/partners/nexteasesolutions.jpg',
-    description: 'Leading software development and IT consulting firm specializing in innovative solutions.',
-    website: 'https://www.nexteasesolutions.in'
-  }
+    name: 'Trainzex AI',
+    logo: '/images/partners/Trainzexai.png',
+    description: 'Transforming businesses with cutting-edge AI solutions and training.',
+    website: 'https://trainzexai.in/'
+  },
 ];
 
 const Partners = () => {
@@ -63,16 +63,16 @@ const Partners = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text pb-2">
             Corporate Partners
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-800 dark:text-gray-100 max-w-3xl mx-auto mb-8">
             Strategic collaborations that drive innovation and growth in our community
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-16 max-w-6xl mx-auto px-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -167,7 +167,9 @@ const Partners = () => {
               We offer tailored partnership opportunities for companies of all sizes.
             </p>
             <motion.a
-              href="#"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdV5A2tjMU4munHMrxykCQp6LkW0Bffx9x3hiS2oHPrqEDUKw/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-accent inline-flex items-center space-x-2 group"
               whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(245, 158, 11, 0.5)" }}
               whileTap={{ scale: 0.95 }}

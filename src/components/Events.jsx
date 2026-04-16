@@ -1,54 +1,31 @@
 import { motion } from 'framer-motion';
 import { CalendarIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 
-// Event data
 const events = [
   {
-    id: 0,
-    title: 'Clash of Coders 3.0',
-    image: 'images/achivement-Image/clashofcoders3.jpeg', // Placeholder image
-    date: 'Apr 11 - 12, 2026',
+    id: 1,
+    title: 'Hackvision',
+    image: 'images/achivement-Image/hackvision.jpeg',
+    date: 'Mar 28 - 29, 2026 & Apr 4 - 5, 2026',
     location: 'Jaipur, India',
     attendees: 'Team Size: 1-3 members',
-    description: 'Join Hackers Unity x JECRC Foundation for an electrifying 24-hour hackathon where your creativity, coding skills, and problem-solving abilities will be pushed to the next level',
-    status: 'Registrations Open',
-    registerLink: 'https://unstop.com/hackathons/clash-of-coders-hackathon-26-jaipur-engineering-college-and-research-center-jecrc-jaipur-1638287?'
+    description: "Hacker’s Unity proudly presents HackVision, a premier hackathon where innovators, developers, and problem-solvers come together to turn ideas into real solutions.",
+    status: 'Ongoing',
+    detailsLink: 'https://hackvision.devpost.com/'
   },
   {
-    id: 1,
+    id: 2,
     title: 'HACKSTORM - Code the Storm',
-    image: 'images/achivement-Image/HackStormIMG.png', // Using existing image as placeholder
+    image: 'images/achivement-Image/HackStormIMG.png',
     date: 'Oct 31 - Nov 1, 2025',
     location: 'Kukas, India',
     attendees: 'Team Size: 2-6 members',
     description: 'Join Hacker\'s Unity for an electrifying 24-hour hackathon where your creativity, coding skills, and problem-solving abilities will be put to the ultimate test! 💻🔥 Highlights include swags, goodies, exciting prizes, internship & PPO opportunities, certificates, networking, workshops, and on-site food facility.',
     status: 'Completed',
-    registerLink: 'https://hackstrom-1.devfolio.co'
+    detailsLink: 'https://hackstrom-1.devfolio.co'
   },
-  // {
-  //   id: 2,
-  //   title: 'Hack Node India By Blockseblock',
-  //   image: 'images/achivement-Image/HackNodeIndia.jpg',
-  //   date: '10th Aug - 31st Aug',
-  //   location: 'Hybrid: Australia, USA, India',
-  //   attendees: 'Global Participants',
-  //   description: 'Hack Node India presents a hands-on workshop series for students to build with AI, Web3, gaming, and more. Learn from experts, build real projects, win from a $5,000 prize pool, and get a chance to compete for $100,000 and an incubation opportunity in Dubai through the Global Accelerator Program.',
-  //   status: 'Completed',
-  //   detailsLink: "https://blockseblock.com/hackathon_details/Hack%20Node%20India"
-  // },
-  // {
-  //   id: 3,
-  //   title: 'India Blockchain Month 2025',
-  //   image: 'images/achivement-Image/INBM.png',
-  //   date: 'September 2025',
-  //   location: '20+ Cities Across India',
-  //   attendees: '73,000+ Expected',
-  //   description: 'India Blockchain Month (INBM) is the world\'s largest community-led celebration of Web3, Blockchain, AI, and the Open Internet. Spanning 20+ cities — from tech hubs to emerging Tier 2 & 3 towns.',
-  //   status: 'Completed',
-  //   detailsLink: "https://www.indiablockchainmonth.com/inbm2025/"
-  // },
   {
-    id: 4,
+    id: 3,
     title: 'WCHL 2025 - World Computer Hacker League',
     image: 'images/achivement-Image/wchl2025event.jpeg',
     date: 'July 1 – July 25, 2025',
@@ -266,11 +243,13 @@ const Events = () => {
               <div className="relative h-64 md:h-full overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent z-10"></div>
                 <img
-                  src="images/hackstorm/IMG_0549.JPG"
+                  src="images/achivement-Image/img14.jpeg"
                   alt="Event organization"
                   className="w-full h-full object-cover object-center"
                 />
-
+                <div className="absolute bottom-4 left-4 z-20 bg-accent/90 text-white text-sm font-semibold py-1 px-3 rounded-full">
+                  Event Organizer
+                </div>
               </div>
 
               {/* Right side - Content */}

@@ -8,7 +8,7 @@ const achievementData = [
     id: 1,
     icon: <TrophyIcon className="h-10 w-10 text-accent" />,
     title: 'Hackathons Organized',
-    value: '15+',
+    value: '10+',
     description: 'Successful hackathons with global participation'
   },
   {
@@ -22,14 +22,14 @@ const achievementData = [
     id: 3,
     icon: <BuildingOfficeIcon className="h-10 w-10 text-accent" />,
     title: 'Partner Organizations',
-    value: '20+',
+    value: '4+',
     description: 'Collaborations with leading tech companies'
   },
   {
     id: 4,
     icon: <CalendarIcon className="h-10 w-10 text-accent" />,
     title: 'Events Conducted',
-    value: '30+',
+    value: '15+',
     description: 'Online and offline tech events'
   }
 ];
@@ -115,7 +115,7 @@ const Achievements = () => {
   };
 
   return (
-    <section id="achievements" className="pt-12 pb-24 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
+    <section id="achievements" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ const Achievements = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Our Community Stats
+            Our Achievements
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
             Celebrating our milestones and impact in the global tech community
