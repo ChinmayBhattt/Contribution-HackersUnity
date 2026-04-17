@@ -6,13 +6,12 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Achievements from './components/Achievements'
+import Gallery from './components/Gallery'
 import Sponsors from './components/Sponsors'
 import Partners from './components/Partners'
 import Events from './components/Events'
 import Footer from './components/Footer'
-import WorkWithHU from './pages/WorkWithHU'
 
-// Import components
 function App() {
   const location = useLocation();
 
@@ -31,6 +30,7 @@ function App() {
             <>
               <Hero />
               <Achievements />
+              <Gallery />
               <Events />
               <Sponsors />
               <Partners />
@@ -40,7 +40,6 @@ function App() {
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/work-with-hu" element={<WorkWithHU />} />
         </Routes>
       </main>
 
