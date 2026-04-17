@@ -5,7 +5,7 @@ const events = [
   {
     id: 1,
     title: 'Hackvision',
-    image: 'images/achivement-Image/hackvision.jpeg',
+    image: './images/achivement-Image/hackvision.jpeg',
     date: 'Mar 28 - 29, 2026 & Apr 4 - 5, 2026',
     location: 'Jaipur, India',
     attendees: 'Team Size: 1-3 members',
