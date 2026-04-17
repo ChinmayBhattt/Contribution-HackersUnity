@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import './App.css'
-import { SignedIn, SignedOut } from "@clerk/clerk-react"
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 // Import components
