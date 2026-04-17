@@ -5,7 +5,7 @@ const events = [
   {
     id: 1,
     title: 'Hackvision',
-    image: './images/achivement-Image/hackvision.jpeg',
+    image: '/images/achivement-Image/hackvision.jpeg',
     date: 'Mar 28 - 29, 2026 & Apr 4 - 5, 2026',
     location: 'Jaipur, India',
     attendees: 'Team Size: 1-3 members',
@@ -16,7 +16,7 @@ const events = [
   {
     id: 2,
     title: 'HACKSTORM - Code the Storm',
-    image: 'images/achivement-Image/HackStormIMG.png',
+    image: '/images/achivement-Image/HackStormIMG.png',
     date: 'Oct 31 - Nov 1, 2025',
     location: 'Kukas, India',
     attendees: 'Team Size: 2-6 members',
@@ -27,7 +27,7 @@ const events = [
   {
     id: 3,
     title: 'WCHL 2025 - World Computer Hacker League',
-    image: 'images/achivement-Image/wchl2025event.jpeg',
+    image: '/images/achivement-Image/wchl2025event.jpeg',
     date: 'July 1 – July 25, 2025',
     location: '100% Online',
     attendees: 'Global Participants',
