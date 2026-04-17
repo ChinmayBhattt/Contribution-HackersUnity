@@ -8,28 +8,28 @@ const achievementData = [
     id: 1,
     icon: <TrophyIcon className="h-10 w-10 text-accent" />,
     title: 'Hackathons Organized',
-    value: '10+',
+    value: '15+',
     description: 'Successful hackathons with global participation'
   },
   {
     id: 2,
     icon: <UserGroupIcon className="h-10 w-10 text-accent" />,
     title: 'Community Members',
-    value: '10000+',
+    value: '10,000+',
     description: 'Active members from around the world'
   },
   {
     id: 3,
     icon: <BuildingOfficeIcon className="h-10 w-10 text-accent" />,
     title: 'Partner Organizations',
-    value: '4+',
+    value: '20+',
     description: 'Collaborations with leading tech companies'
   },
   {
     id: 4,
     icon: <CalendarIcon className="h-10 w-10 text-accent" />,
     title: 'Events Conducted',
-    value: '15+',
+    value: '30+',
     description: 'Online and offline tech events'
   }
 ];
@@ -115,7 +115,7 @@ const Achievements = () => {
   };
 
   return (
-    <section id="achievements" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
+    <section id="achievements" className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50 dark:from-primary/90 dark:to-primary">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -173,127 +173,7 @@ const Achievements = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          {/* <a href="#" className="btn btn-accent inline-flex items-center space-x-2 group">
-            <span>View All Achievements</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a> */}
-        </motion.div>
 
-        {/* Achievement Showcase with Images */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-24"
-        >
-          {/* <h3 className="text-3xl font-bold mb-10 text-center gradient-text">
-            Showcase Gallery
-          </h3>
-           */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {achievementImages.map((item) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: item.id * 0.1 }}
-                className="relative group overflow-hidden rounded-xl h-80"
-                onMouseEnter={() => setHoveredImage(item.id)}
-                onMouseLeave={() => setHoveredImage(null)}
-              >
-                {/* Border Animation */}
-                <motion.div
-                  className="absolute inset-0 z-10 rounded-xl pointer-events-none"
-                  animate={{
-                    boxShadow: hoveredImage === item.id
-                      ? ['0px 0px 0px 0px rgba(255,87,34,0)', '0px 0px 0px 3px rgba(255,87,34,0.7)']
-                      : '0px 0px 0px 0px rgba(255,87,34,0)'
-                  }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                />
-
-                {/* Corner Accents */}
-                <motion.div
-                  className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-accent z-20 rounded-tl-lg"
-                  animate={{
-                    width: hoveredImage === item.id ? [40, 60] : 40,
-                    height: hoveredImage === item.id ? [40, 60] : 40,
-                    opacity: hoveredImage === item.id ? [0.5, 1] : 0.5,
-                  }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                />
-
-                <motion.div
-                  className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-accent z-20 rounded-br-lg"
-                  animate={{
-                    width: hoveredImage === item.id ? [40, 60] : 40,
-                    height: hoveredImage === item.id ? [40, 60] : 40,
-                    opacity: hoveredImage === item.id ? [0.5, 1] : 0.5,
-                  }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                />
-
-                {/* Image */}
-                <motion.div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                  animate={{
-                    scale: hoveredImage === item.id ? 1.1 : 1
-                  }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                />
-
-                {/* Overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent"
-                  animate={{
-                    opacity: hoveredImage === item.id ? 0.9 : 0.7
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* Content */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 p-6 z-20"
-                  animate={{
-                    y: hoveredImage === item.id ? 0 : 10,
-                    opacity: hoveredImage === item.id ? 1 : 0.8
-                  }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <motion.h4
-                    className="text-xl font-bold text-white mb-2"
-                    animate={{
-                      y: hoveredImage === item.id ? 0 : 10,
-                    }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                  >
-                    {item.title}
-                  </motion.h4>
-
-                  <motion.p
-                    className="text-gray-200 text-sm"
-                    animate={{
-                      y: hoveredImage === item.id ? 0 : 20,
-                      opacity: hoveredImage === item.id ? 1 : 0
-                    }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    {item.description}
-                  </motion.p>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
