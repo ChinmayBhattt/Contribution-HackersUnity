@@ -101,7 +101,9 @@ const Events = () => {
             <motion.div
               key={event.id}
               variants={itemVariants}
-              className="glass-effect rounded-2xl overflow-hidden relative group"
+              className={`glass-effect rounded-2xl overflow-hidden relative group ${
+                event.title === 'Hackvision' ? 'hidden md:block' : ''
+              }`}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
