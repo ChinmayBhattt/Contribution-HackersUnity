@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://hackersunity.com/sitemap.xml
+Sitemap: https://www.hackersunity.com/sitemap.xml
