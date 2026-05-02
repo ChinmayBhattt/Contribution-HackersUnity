@@ -27,9 +27,11 @@ export const metadata = {
   },
   verification: {
     google: 'H48wr7qAG78kx6IfVuUg4P-6MS9hneJe9enR6HwIquw',
+    google: 'zQnDJWC7wb3Fr3PXhARAOd2t1Vmd3dsBicp6_PZE0tM',
   },
   other: {
     'google-adsense-account': 'ca-pub-8285568809233100',
+    
   },
 };
 
