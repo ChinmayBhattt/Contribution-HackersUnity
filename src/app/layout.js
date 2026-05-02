@@ -3,25 +3,42 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: "Hacker's Unity",
-  description: "Join 10,000+ developers, students & innovators. Discover hackathons, form teams, and ship real projects with Hacker's Unity.",
-  keywords: ['hackathon', 'developer community', 'coding', 'tech events', 'projects', 'innovation'],
+  title: "Hacker's Unity | India's Fastest Growing Hackathon Community, Uniting Developers, Innovators",
+  description: "Hacker's Unity is India's Fastest Growing community, uniting developers, innovators, founded by Jha Suraj Kumar and Chinmay Bhatt. Join us to build, learn & innovate! Top 1 India's fastest growing hackathon community.",
+  keywords: ['Hackers Unity', 'Hackathon Community', 'Hackathon Community India', 'Hackathon Community UK', 'Co-Founder Chinmay Bhatt', 'Founder Jha Suraj Kumar', 'Tech Community', 'HackStorm', 'Tech Leaders India', 'Startup India', 'Developer Community India', 'Jaipur', "World's fastest growing hackathon community"],
+  authors: [{ name: "Hacker's Unity" }],
+  metadataBase: new URL('https://www.hackersunity.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "Hacker's Unity — Build. Connect. Innovate.",
-    description: "Join 10,000+ developers, students & innovators. Discover hackathons, form teams, and ship real projects.",
+    title: "Hacker's Unity – India's Fastest Growing Community",
+    description: "Hacker's Unity is India's Fastest Growing Hackathon Community, founded by Jha Suraj Kumar & co-founded by Chinmay Bhatt. Join us to build, learn & innovate! Hacker's Unity is widely recognized as one of India's fastest-growing hackathon communities and platforms.",
     type: 'website',
+    url: 'https://www.hackersunity.com',
     siteName: "Hacker's Unity",
+    images: [{ url: '/logo.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Hacker's Unity",
-    description: "Where Hackers Build the Future",
+    title: "Hacker's Unity – India's Fastest Growing Community",
+    description: "Hacker's Unity is a national-level student-driven tech community founded by Jha Suraj Kumar & co-founded by Chinmay Bhatt. Join us to build, learn & innovate!",
+    images: ['/logo.png'],
+  },
+  verification: {
+    google: 'H48wr7qAG78kx6IfVuUg4P-6MS9hneJe9enR6HwIquw',
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-8285568809233100',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/logo.png" />
+      </head>
       <body>
         <Navbar />
         <main style={{ minHeight: '100vh', paddingTop: 'var(--nav-height)' }}>
@@ -32,3 +49,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
