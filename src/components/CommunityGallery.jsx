@@ -4,11 +4,11 @@ import styles from './CommunityGallery.module.css';
 const photos = [
   { src: '/gallery/1.jpg' },
   { src: '/gallery/2.jpg' },
-  { src: '/gallery/HUHackstorm.JPG' },
+  { src: '/gallery/HUEvents3.jpg' },
   { src: '/gallery/3.jpg' },
   { src: '/gallery/HuTeam.JPG' },
-  { src: '/gallery/HUHackstorm3.jpg' },
-  { src: '/gallery/HUHackstorm4.jpg' },
+  { src: '/gallery/HuEvents4.jpg' },
+  { src: '/gallery/HuEvents5.jpg' },
   { src: '/gallery/HuEvents1.jpg' },
   { src: '/gallery/HuEvents2.jpg' },
 ];
