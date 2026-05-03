@@ -7,7 +7,7 @@ const footerLinks = {
   Platform: [
     { label: 'Hackathons', href: '/hackathons' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Events', href: '/events' },
+    { label: 'Sponsors', href: '/sponsors' },
     { label: 'Community', href: '/community' },
   ],
   Legal: [
