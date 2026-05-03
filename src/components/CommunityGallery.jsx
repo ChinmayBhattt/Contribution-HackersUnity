@@ -198,10 +198,6 @@ export default function CommunityGallery() {
       </div>
 
       {/* Hint text */}
-      <div className={styles.hintBar}>
-        <span className={styles.hintDot} />
-        <span>Drag to Navigate • Hover to Explore</span>
-      </div>
     </div>
   );
 }

@@ -8,9 +8,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-16) 0 var(--space-8);
+  padding: var(--space-8) 0 var(--space-20);
   overflow: hidden;
   min-height: 700px;
+  margin-bottom: var(--space-8);
 }
 
 /* ---- AMBIENT BACKGROUND EFFECTS ---- */
