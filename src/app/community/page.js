@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { MessageCircle, Zap, Users, BookOpen, Award, ArrowRight } from 'lucide-react';
+import { MessageCircle, Zap, Users, BookOpen, Award, ArrowRight, Code } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import AnimatedSection from '@/components/AnimatedSection';
 import CommunityGallery from '@/components/CommunityGallery';
 import styles from './community.module.css';
 
-export const metadata = { title: "Community — Hacker's Unity", description: "Join a global community of 10,000+ builders, innovators and hackers." };
+export const metadata = { title: "Community Hacker's Unity", description: "Join a global community of 10,000+ builders, innovators and hackers." };
 
 export default function CommunityPage() {
   const features = [
@@ -14,6 +14,7 @@ export default function CommunityPage() {
     { icon: <Users size={24} />, title: '100+ Mentors', desc: 'Industry professionals ready to guide your learning journey.' },
     { icon: <BookOpen size={24} />, title: 'Learning Paths', desc: 'Curated resources and roadmaps for every tech domain.' },
     { icon: <Award size={24} />, title: 'Recognition System', desc: 'Earn badges, climb the leaderboard, and get featured.' },
+    { icon: <Code size={24} />, title: 'Career Connect', desc: 'Get referrals, internship opportunities, and industry exposure.' },
   ];
 
   return (
@@ -32,7 +33,7 @@ export default function CommunityPage() {
             ))}
           </div>
         </AnimatedSection>
-        
+
         <AnimatedSection>
           <CommunityGallery />
         </AnimatedSection>
