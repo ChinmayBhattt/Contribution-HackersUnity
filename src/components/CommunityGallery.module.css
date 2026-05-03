@@ -1,57 +1,422 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-4);
-  margin-top: var(--space-10);
-  margin-bottom: var(--space-10);
-}
+/* ============================================
+   3D GLOBE GALLERY — Immersive Sphere Layout
+   ============================================ */
 
-.card {
+/* ---- SECTION WRAPPER ---- */
+.gallerySection {
   position: relative;
-  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-16) 0 var(--space-8);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
-  border: 1px solid var(--border-subtle);
-  transition: all var(--transition-base);
+  min-height: 650px;
 }
 
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  border-color: rgba(0, 136, 255, 0.3);
+/* ---- AMBIENT BACKGROUND EFFECTS ---- */
+.ambientOrb1 {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.07) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.ambientOrb2 {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 136, 255, 0.07) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+/* Subtle grid pattern behind globe */
+.gridLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 50% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 50% 60% at 50% 50%, black 20%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---- GLOBE VIEWPORT ---- */
+.globeViewport {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  height: 550px;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globeViewport:active {
+  cursor: grabbing;
+}
+
+/* Wireframe sphere hint behind the cards */
+.wireframeSphere {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow:
+    inset 0 0 80px rgba(255, 106, 0, 0.03),
+    inset 0 0 120px rgba(0, 136, 255, 0.02),
+    0 0 60px rgba(255, 106, 0, 0.02);
+  pointer-events: none;
+  animation: pulseSphere 6s ease-in-out infinite;
+}
+
+.wireframeSphere::before,
+.wireframeSphere::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.wireframeSphere::before {
+  inset: 40px;
+}
+
+.wireframeSphere::after {
+  inset: 80px;
+}
+
+/* ---- 3D GLOBE ---- */
+.globe {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transition: none;
+  will-change: transform;
+}
+
+.globeDragging {
+  cursor: grabbing;
+}
+
+/* ---- ORBIT CARD (on sphere surface) ---- */
+.orbitCard {
+  position: absolute;
+  width: 190px;
+  height: 130px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    filter 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.5s ease;
+  /* Center the card on its origin point */
+  margin-left: -95px;
+  margin-top: -65px;
+}
+
+/* ---- ANIMATED BORDER BEAM ---- */
+.borderBeam {
+  position: absolute;
+  inset: -3px;
+  border-radius: 19px;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.borderBeamInner {
+  position: absolute;
+  inset: -80%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 30%,
+    #FF6A00 38%,
+    #FF8C33 42%,
+    #33A0FF 50%,
+    #0088FF 58%,
+    transparent 66%,
+    transparent 100%
+  );
+  animation: spinBorderBeam 3s linear infinite;
+  animation-play-state: paused;
+}
+
+/* ---- CARD INNER (clipping layer) ---- */
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+  background: var(--bg-surface);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s ease;
 }
 
 .image {
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.card:hover .image {
-  transform: scale(1.08);
-}
-
-.overlay {
+/* ---- HOVER OVERLAY ---- */
+.hoverOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
-  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px 14px;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 15, 0.85) 0%,
+    rgba(10, 10, 15, 0.3) 50%,
+    transparent 100%
+  );
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity 0.4s ease;
 }
 
-.card:hover .overlay {
+.cardLabel {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  transform: translateY(8px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ============================================
+   HOVER / ACTIVE STATE
+   ============================================ */
+
+.cardActive {
+  z-index: 100 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Border beam appears */
+.cardActive .borderBeam {
   opacity: 1;
 }
 
+.cardActive .borderBeamInner {
+  animation-play-state: running;
+}
+
+/* Image zooms in */
+.cardActive .cardInner {
+  transform: scale(1.25);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(255, 106, 0, 0.15),
+    0 0 60px rgba(0, 136, 255, 0.1);
+  border-color: transparent;
+}
+
+.cardActive .image {
+  transform: scale(1.1);
+}
+
+/* Label appears */
+.cardActive .hoverOverlay {
+  opacity: 1;
+}
+
+.cardActive .cardLabel {
+  transform: translateY(0);
+}
+
+/* ---- HINT BAR ---- */
+.hintBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-6);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hintDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes spinBorderBeam {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.05); }
+  66% { transform: translate(-15px, 10px) scale(0.95); }
+}
+
+@keyframes pulseSphere {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow:
+      inset 0 0 80px rgba(255, 106, 0, 0.03),
+      inset 0 0 120px rgba(0, 136, 255, 0.02),
+      0 0 60px rgba(255, 106, 0, 0.02);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+    box-shadow:
+      inset 0 0 100px rgba(255, 106, 0, 0.05),
+      inset 0 0 150px rgba(0, 136, 255, 0.03),
+      0 0 80px rgba(0, 136, 255, 0.03);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .globeViewport {
+    height: 480px;
+    perspective: 1000px;
+  }
+
+  .wireframeSphere {
+    width: 420px;
+    height: 420px;
+  }
+
+  .orbitCard {
+    width: 160px;
+    height: 110px;
+    margin-left: -80px;
+    margin-top: -55px;
+  }
+}
+
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .gallerySection {
+    padding: var(--space-10) 0 var(--space-6);
+    min-height: 500px;
+  }
+
+  .globeViewport {
+    height: 420px;
+    perspective: 900px;
+  }
+
+  .wireframeSphere {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbitCard {
+    width: 140px;
+    height: 95px;
+    margin-left: -70px;
+    margin-top: -47px;
+  }
+
+  .cardActive .cardInner {
+    transform: scale(1.2);
+  }
+
+  .ambientOrb1,
+  .ambientOrb2 {
+    width: 250px;
+    height: 250px;
   }
 }
 
 @media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .gallerySection {
+    min-height: 400px;
+  }
+
+  .globeViewport {
+    height: 360px;
+    perspective: 800px;
+  }
+
+  .wireframeSphere {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbitCard {
+    width: 120px;
+    height: 82px;
+    margin-left: -60px;
+    margin-top: -41px;
+  }
+
+  .borderBeam {
+    inset: -2px;
+    border-radius: 15px;
+  }
+
+  .cardInner {
+    border-radius: 12px;
+  }
+
+  .cardActive .cardInner {
+    transform: scale(1.15);
+  }
+
+  .hintBar {
+    font-size: 0.65rem;
+    padding: 6px 14px;
   }
 }
