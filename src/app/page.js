@@ -141,7 +141,7 @@ export default function Home() {
             <div className={styles.communityVisual}>
               <div className={styles.communityImageWrapper}>
                 <Image 
-                  src="/gallery/HuTeam.JPG" 
+                  src="/gallery/HuTeam.jpg" 
                   alt="HU Team" 
                   fill 
                   style={{ objectFit: 'cover' }} 
