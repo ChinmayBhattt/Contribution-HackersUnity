@@ -6,7 +6,7 @@ const photos = [
   { src: '/gallery/2.jpg' },
   { src: '/gallery/HUEvents3.jpg' },
   { src: '/gallery/3.jpg' },
-  { src: '/gallery/HuTeam.JPG' },
+  { src: '/gallery/HuTeam.jpg' },
   { src: '/gallery/HuEvents4.jpg' },
   { src: '/gallery/HuEvents5.jpg' },
   { src: '/gallery/HuEvents1.jpg' },

@@ -6,14 +6,14 @@ import styles from './GalleryCarousel.module.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  { src: '/gallery/HUHackstorm.JPG', alt: 'HU Hackstorm', title: 'HU Hackstorm Kickoff', desc: 'Where the journey of hackers begins.' },
+  { src: '/gallery/HUHackstorm.jpg', alt: 'HU Hackstorm', title: 'HU Hackstorm Kickoff', desc: 'Where the journey of hackers begins.' },
   { src: '/gallery/HUHackstorm3.jpg', alt: 'HU Hackstorm 3', title: 'Hands-On Learning', desc: 'Building and learning together.' },
   { src: '/gallery/HUHackstorm4.jpg', alt: 'HU Hackstorm 4', title: 'Intense Coding', desc: 'Hacking the night away.' },
   { src: '/gallery/HUHackstorm5.jpg', alt: 'HU Hackstorm 5', title: 'Team Collaboration', desc: 'The energy of passionate developers.' },
   { src: '/gallery/HUHackstorm6.jpg', alt: 'HU Hackstorm 6', title: 'Problem Solving', desc: 'Tackling real-world challenges.' },
   { src: '/gallery/HUHackstorm7.jpg', alt: 'HU Hackstorm 7', title: 'Hackstorm Action', desc: 'Focus and determination.' },
   { src: '/gallery/HUHackstormw2.jpg', alt: 'HU Hackstorm w2', title: 'Winning Moments', desc: 'Celebrating success and innovation.' },
-  { src: '/gallery/HuTeam.JPG', alt: 'HU Team', title: 'The Unity Team', desc: 'The people behind the magic.' },
+  { src: '/gallery/HuTeam.jpg', alt: 'HU Team', title: 'The Unity Team', desc: 'The people behind the magic.' },
   { src: '/gallery/HUEvents3.jpg', alt: 'HU Event 3', title: 'Community Meetup', desc: 'Bringing the tech community together.' },
   { src: '/gallery/HuEvents1.jpg', alt: 'HU Event 1', title: 'Mentorship Session', desc: 'Learning from industry experts.' },
   { src: '/gallery/HuEvents2.jpg', alt: 'HU Event 2', title: 'Tech Talk', desc: 'Insights and knowledge sharing.' },

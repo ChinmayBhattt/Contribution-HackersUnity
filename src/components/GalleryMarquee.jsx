@@ -3,11 +3,11 @@ import styles from './GalleryMarquee.module.css';
 
 const images = [
   '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', 
-  'HUEvents3.jpg', 'HUHackstorm.JPG', 'HUHackstorm3.jpg', 
+  'HUEvents3.jpg', 'HUHackstorm.jpg', 'HUHackstorm3.jpg', 
   'HUHackstorm4.jpg', 'HUHackstorm5.jpg', 'HUHackstorm6.jpg', 
   'HUHackstorm7.jpg', 'HUHackstormw2.jpg', 'HuEvents1.jpg', 
   'HuEvents2.jpg', 'HuEvents4.jpg', 'HuEvents5.jpg', 
-  'HuEvents6.jpg', 'HuEvents7.jpg', 'HuTeam.JPG'
+  'HuEvents6.jpg', 'HuEvents7.jpg', 'HuTeam.jpg'
 ];
 
 export default function GalleryMarquee() {
